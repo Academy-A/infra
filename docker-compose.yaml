@@ -29,7 +29,7 @@ services:
   cron:
     restart: unless-stopped
     image: andytakker/insperia-lms-backend:latest
-    entrypoint: python -m lms.presentationcron
+    entrypoint: python -m lms.presentation.cron
 
     environment:
       APP_DATABASE_DSN: ${APP_DATABASE_DSN}
