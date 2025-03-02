@@ -1,7 +1,7 @@
 services:
   rest:
     restart: unless-stopped
-    image: andytakker/insperia-lms-backend:latest
+    image: andytakker/insperia-lms-backend:${APP_IMAGE_VERSION}
     entrypoint: python -m lms.presentation.rest
     ports:
       - 8000:80
@@ -28,7 +28,7 @@ services:
 
   cron:
     restart: unless-stopped
-    image: andytakker/insperia-lms-backend:latest
+    image: andytakker/insperia-lms-backend:${APP_IMAGE_VERSION}
     entrypoint: python -m lms.presentation.cron
 
     environment:
